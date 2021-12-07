@@ -1,18 +1,30 @@
 <template>
   <div class="home">
+    <!-- css实现跑马灯 -->
+    <NoticeBarCss></NoticeBarCss>
+
+    <!-- js实现跑马灯 -->
+    <NoticeBar></NoticeBar>
+
     <!-- 渲染函数 -->
     <blog-post>
       <template v-slot:header>
         <h1>About Me 我是header插槽</h1>
       </template>
 
-      <p>111 Here's some page content, which will be included in vm.$slots.default, because it's not inside a named slot.</p>
+      <p>
+        111 Here's some page content, which will be included in vm.$slots.default, because it's not
+        inside a named slot.
+      </p>
 
       <template v-slot:footer>
         <p>Copyright 2016 Evan You 我是footer插槽</p>
       </template>
 
-      <p>222 If I have some content down here, it will also be included in vm.$slots.default.</p>.
+      <p>
+        222 If I have some content down here, it will also be included in vm.$slots.default.
+      </p>
+      .
     </blog-post>
 
     <!-- 自定义指令 -->
@@ -55,11 +67,15 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+import NoticeBar from '@/components/NoticeBar.vue'
+import NoticeBarCss from '@/components/NoticeBarCss.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    HelloWorld,
+    NoticeBar,
+    NoticeBarCss
   },
   data () {
     return {
